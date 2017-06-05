@@ -1,0 +1,14 @@
+{
+  "desiredStartTime": "06:00",
+  "pauseBetweenZones": 1,
+  "program": [
+    {
+      "zone": "back",
+      "duration": 30
+    },
+    {
+      "zone": "side",
+      "duration": 30
+    }
+  ]
+}
