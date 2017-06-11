@@ -1,11 +1,25 @@
 const redux = require('redux');
+const ro = require('redux-observable');
 
-const plans = require('./plans/duck').reducer;
+const plan = require('./plans/duck').reducer;
+const logger = require('./logger/duck').reducer;
+const controller = require('./controller/duck').reducer;
 
 const reducers = redux.combineReducers({
-  plans
+  plan,
+  logger,
+  controller
 })
+
+const switchesEpics = require('./controller/epics/switches');
+const timerEpics = require('./timer/epic');
+
+const epics = ro.combineEpics(
+  switchesEpics,
+  timerEpics
+)
 
 module.exports = {
   reducers,
+  epics
 }

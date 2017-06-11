@@ -4,13 +4,15 @@ const getShouldWaterList = require('../shouldWater')
 const toggle = require('../duck').actionCreators.toggle;
 
 const switchEpic = (action$, store) => {
-  const state = store.getState();
   return action$.ofType(timerActions.TRIGGER)
     .switchMap(
-      action => Rx.Observable.from(getShouldWaterList(action.time, state.plan ))
-                  .map(({ zone, water }) => shouldToggle(zone, water, state.controller[zone]))
+      action => Rx.Observable.from(getShouldWaterList(action.time, store.getState().plan ))
+                  .map(({ zone, water }) => shouldToggle(zone, water, store.getState().controller[zone]))
                   .filter( action => !!action)
-    ).concat(Rx.Observable.of({type: timerActions.TRIGGER_COMPLETED}))
+                  .catch(err => console.error('error', err))
+    .concat(Rx.Observable.of({type: timerActions.TRIGGER_COMPLETED}))
+  )
+
 }
 
 module.exports = switchEpic;
