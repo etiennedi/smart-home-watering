@@ -10,7 +10,8 @@ const getEnd = (accu, duration, pause, now) => {
 }
 
 
-const createPlan = ({config}) => now => {
+const createPlan = ({config}) => nowInput => {
+  const now = parseInt(nowInput);
   const { program, pauseBetweenZones /* in minutes */ } = config;
 
   const pause = pauseBetweenZones * 60000 // convert to milliseconds
