@@ -3,6 +3,8 @@ version: '3'
 services:
   planner:
     build: './planner'
+    ports:
+      - "8000:8000"
 
   agent:
     build: './agent'
