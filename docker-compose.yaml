@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  planner:
+    build: './planner'
+
+  agent:
+    build: './agent'
