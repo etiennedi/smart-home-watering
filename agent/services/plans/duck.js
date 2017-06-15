@@ -18,8 +18,9 @@ const received = plan => ({
   payload: plan,
 })
 
-const requested = () => ({
+const requested = time => ({
   type: REQUESTED,
+  time,
 })
 
 const error = (error) => ({

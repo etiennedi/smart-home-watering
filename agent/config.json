@@ -1,5 +1,12 @@
 {
   "endpoints" : {
     "planner" : "http://planner:8000"
+  },
+  "timings": {
+    "startWatering" : "18:00:00",
+    "createPlan" : "17:59:00"
+  },
+  "internals" : {
+    "refresh" : 250
   }
 }
