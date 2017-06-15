@@ -9,6 +9,7 @@ const timerEpic = (action$, _, { config }) => action$
      () => Rx.Observable
        .interval(config.internals.refresh)
        .map(() => actionCreators.trigger())
+       .do(action => console.log('time', new Date(action.time).getMilliseconds()))
   )
 
 module.exports = timerEpic;

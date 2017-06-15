@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "clear": "0.0.1",
+    "cron": "^1.2.1",
     "redux": "^3.6.0",
     "redux-observable": "^0.14.1",
     "request": "^2.81.0",
