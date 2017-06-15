@@ -5,7 +5,7 @@ const { REQUESTED } = duck.actions
 
 const fetchPlan = (action$, _, { api }) => {
   return action$.ofType(REQUESTED)
-    .switchMap(api.getPlan)
+    .switchMap(() => api.getPlan(Date.now()))
     .map(results => received(results))
     .catch(err => Rx.Observable.of(error(err)));
 }
