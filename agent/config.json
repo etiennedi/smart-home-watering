@@ -4,7 +4,7 @@
   },
   "timings": {
     "startWatering" : "18:00:00",
-    "createPlan" : "17:59:00"
+    "createPlan" : "23:16:00"
   },
   "internals" : {
     "refresh" : 250

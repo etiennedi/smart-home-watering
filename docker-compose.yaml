@@ -7,4 +7,7 @@ services:
       - "8000:8000"
 
   agent:
-    build: './agent'
+    build: 
+      context: './agent'
+      args:
+        TZ: Europe/Berlin

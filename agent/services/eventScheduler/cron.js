@@ -1,8 +1,11 @@
-const initialize = ({ CronJob }) => schedule => {
+const initialize = ({ CronJob, dispatch }) => schedule => {
   return schedule.map(({ cronTime, action }) => {
     return new CronJob({
       cronTime,
-      onTick: action,
+      onTick: () => {
+        console.log("in ontick");
+        dispatch(action());
+      },
       start: true
     });
   });

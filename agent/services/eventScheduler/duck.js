@@ -7,7 +7,7 @@ const initialState = [
     name: "GetTodaysConfigFromPlannerService",
     cronTime: timeToCron(config.timings.createPlan),
     action: () =>
-      requested(todayAtTime(Date.now(), config.timings.startWatering))
+      requestPlan(todayAtTime(Date.now(), config.timings.startWatering))
   }
 ];
 
