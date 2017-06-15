@@ -1,0 +1,5 @@
+{
+  "endpoints" : {
+    "planner" : "http://planner:8000"
+  }
+}
